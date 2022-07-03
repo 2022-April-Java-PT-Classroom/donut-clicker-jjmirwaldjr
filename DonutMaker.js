@@ -1,38 +1,37 @@
 class DonutMaker{
-
+    
     constructor (donutCounter, autoClicker){
         this.donutCounter = donutCounter;
         this.autoClicker = autoClicker;
+        this.increment = 10;
+        this.autoClickerCost = 100;
     }
-
-    //Counter for the Donut Master to track
-    addToCounter(){
-        this.donutCounter++;
-    }
-
-    addToAutoClicker(){
-        if (this.donutCounter >= 100){
-        this.donutCounter -= 100;
-        this.autoClicker += 1;
-        }
-    }
-
-    
-    //Displays the counter
-    retriveDonuts() {
+    //Displays the Counter
+    get donuts() {
         return this.donutCounter;
     }
-
-    retriveAutoClicker(){
+    get countAutoClicker(){
         return this.autoClicker;
     }
 
-    //Donut Clicker
-    increaseCostOfAutoClickers(){
-        if( this.autoClicker >= 1){
-            this.donutCounter ** 10;
+    //User Clicks donut
+    addToCounter(){
+        if( this.countAutoClicker > 0){
+            this.donutCounter += (this.increment * this.countAutoClicker);
+        } else {
+            this.donutCounter += this.increment;
         }
     }
+    //Cost of Auto Clicker
+    addAutoClicker(){
+        if (this.donuts >= this.autoClickerCost){
+        this.donutCounter -= this.autoClickerCost;
+        this.autoClicker++;
+        }
+    }
+
+
+    
 
 }
 
