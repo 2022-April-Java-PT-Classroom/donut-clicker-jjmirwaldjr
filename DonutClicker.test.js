@@ -24,6 +24,13 @@ describe('DonutMaker', () => {
         expect(underTest.donuts).toEqual(110);
     });
 
+    test("increaes the cost of the auto clicker", () =>{
+        let underTest = new DonutMaker(100, 0);
+        underTest.addAutoClicker();
+        expect(underTest.donuts).toEqual(0);
+        expect(underTest.countAutoClicker).toEqual(1);
+    });
+
     // *Redunent Test*
     // test("Does it add to the Counter", () => {
     //     let underTest = new DonutMaker(0, 0);

@@ -17,16 +17,17 @@ class DonutMaker{
     //User Clicks donut
     addToCounter(){
         if( this.countAutoClicker > 0){
-            this.donutCounter += (this.increment * this.countAutoClicker);
+            this.donutCounter += (this.increment * this.autoClicker);
         } else {
             this.donutCounter += this.increment;
         }
     }
     //Cost of Auto Clicker
     addAutoClicker(){
-        if (this.donuts >= this.autoClickerCost){
-        this.donutCounter -= this.autoClickerCost;
-        this.autoClicker++;
+        let currentClickerCost = (this.autoClickerCost * (this.countAutoClicker+1));
+        if (this.donuts >= currentClickerCost){
+            this.donutCounter -= currentClickerCost
+            this.autoClicker++;
         }
     }
 
