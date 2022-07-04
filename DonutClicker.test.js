@@ -31,11 +31,12 @@ describe('DonutMaker', () => {
         expect(underTest.countAutoClicker).toEqual(1);
     });
 
-    // *Redunent Test*
-    // test("Does it add to the Counter", () => {
-    //     let underTest = new DonutMaker(0, 0);
-    //     underTest.addToCounter();
-    //     expect(underTest.getDonuts()).toEqual(10);
-    // });
+    // *was a redunent test, repurposed*
+    test("Does it add the multiplier", () => {
+        let underTest = new DonutMaker(50, 0, 0);
+        underTest.addDonutMultiplier();
+        expect(underTest.donuts).toEqual(0);
+        expect(underTest.donutMultiplier).toEqual(1);
+    });
     
 });
