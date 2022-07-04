@@ -25,17 +25,25 @@ describe('DonutMaker', () => {
     });
 
     test("increaes the cost of the auto clicker", () =>{
-        let underTest = new DonutMaker(100, 0);
+        let underTest = new DonutMaker(100, 2);
         underTest.addAutoClicker();
-        expect(underTest.donuts).toEqual(0);
-        expect(underTest.countAutoClicker).toEqual(1);
+        expect(underTest.donuts).toEqual(100);
+        expect(underTest.countAutoClicker).toEqual(2);
     });
 
-    // *Redunent Test*
-    // test("Does it add to the Counter", () => {
-    //     let underTest = new DonutMaker(0, 0);
-    //     underTest.addToCounter();
-    //     expect(underTest.getDonuts()).toEqual(10);
-    // });
+    // *was a redunent test, repurposed*
+    test("Does it add the multiplier", () => {
+        let underTest = new DonutMaker(50, 0, 0);
+        underTest.addDonutMultiplier();
+        expect(underTest.donuts).toEqual(0);
+        expect(underTest.countDonutMultiplier).toEqual(1);
+    });
+
+    test("Does it increase the cost of the multiplier", () => {
+        let underTest = new DonutMaker(100, 0, 1);
+        underTest.costOfMultiplier();
+        expect(underTest.donuts).toEqual(120);
+        expect(underTest.countDonutMultiplier).toEqual(2)
+    });
     
 });

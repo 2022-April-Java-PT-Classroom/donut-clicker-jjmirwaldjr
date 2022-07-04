@@ -1,10 +1,12 @@
 class DonutMaker{
     
-    constructor (donutCounter, autoClicker){
+    constructor (donutCounter, autoClicker, donutMulti){
         this.donutCounter = donutCounter;
         this.autoClicker = autoClicker;
+        this.donutMulti = donutMulti
         this.increment = 10;
         this.autoClickerCost = 100;
+        this.multiplierCost = 10;
     }
     //Displays the Counter
     get donuts() {
@@ -12,6 +14,10 @@ class DonutMaker{
     }
     get countAutoClicker(){
         return this.autoClicker;
+    }
+
+    get countDonutMultiplier(){
+        return this.donutMulti
     }
 
     //User Clicks donut
@@ -31,7 +37,22 @@ class DonutMaker{
         }
     }
 
+    //This can add the multiplier and subract from the count
+    addDonutMultiplier(){
+        if (this.donutCounter >= 50){
+            this.donutCounter -= 50;
+            this.donutMulti++;
+        }
+    }
 
+    //This will increase the cost of the multiplier
+    costOfMultiplier(){
+        let currentmultiplierCost = (this.multiplierCost * (this.countDonutMultiplier+1));
+        if (this.donuts >= currentmultiplierCost){
+            this.donutCounter += currentmultiplierCost
+            this.donutMulti++;
+        }
+    }
     
 
 }
