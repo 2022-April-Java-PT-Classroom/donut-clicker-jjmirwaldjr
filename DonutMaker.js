@@ -15,7 +15,6 @@ class DonutMaker{
     get countAutoClicker(){
         return this.autoClicker;
     }
-
     get countDonutMultiplier(){
         return this.donutMulti
     }
