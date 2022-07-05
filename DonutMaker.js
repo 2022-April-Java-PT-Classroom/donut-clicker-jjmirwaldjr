@@ -56,8 +56,8 @@ class DonutMaker{
     //this increases the value of each donut compaired to the multiplier
     multiplierValue(){
         if (this.countDonutMultiplier > 0){
-            this.donutCounter *= 1.2 ** Math.ceil(this.countDonutMultiplier);
-            this.autoClicker *= 1.2 ** Math.ceil(this.countDonutMultiplier);
+            this.donutCounter *= Math.pow(1.2 ** Math.ceil(this.countDonutMultiplier));
+            this.autoClicker *= Math.pow(1.2 ** Math.ceil(this.countDonutMultiplier));
         }
     }
 
