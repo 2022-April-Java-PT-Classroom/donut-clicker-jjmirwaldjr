@@ -35,7 +35,7 @@ describe('DonutMaker', () => {
     test("Does it add the multiplier", () => {
         let underTest = new DonutMaker(100, 0, 0);
         underTest.addDonutMultiplier();
-        expect(underTest.donuts).toEqual(50);
+        expect(underTest.donuts).toEqual(90);
         expect(underTest.countDonutMultiplier).toEqual(1);
     });
 
@@ -48,7 +48,11 @@ describe('DonutMaker', () => {
     
     test("Should increase the value of each donut clicked", () => {
         let underTest = new DonutMaker(100, 0, 1);
+        underTest.addToCounter();
+        underTest.addDonutMultiplier();
         underTest.multiplierValue();
-        expect(underTest.donuts).toEqual(120);
+        expect(underTest.donuts).toEqual(103);
+        expect(underTest.countAutoClicker).toEqual(3)
+        expect(underTest.countDonutMultiplier).toEqual(2)
     });
 });

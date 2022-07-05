@@ -38,8 +38,8 @@ class DonutMaker{
 
     //This can add the multiplier and subract from the count
     addDonutMultiplier(){
-        if (this.donutCounter >= 50){
-            this.donutCounter -= 50;
+        if (this.donuts >= 50){
+            this.donutCounter -= this.multiplierCost;
             this.donutMulti++;
         }
     }
@@ -56,8 +56,8 @@ class DonutMaker{
     //this increases the value of each donut compaired to the multiplier
     multiplierValue(){
         if (this.countDonutMultiplier > 0){
-            this.donutCounter *= Math.pow(1.2 ** Math.ceil(this.countDonutMultiplier));
-            this.autoClicker *= Math.pow(1.2 ** Math.ceil(this.countDonutMultiplier));
+            this.donutCounter += Math.ceil(1.2 * this.countDonutMultiplier);
+            this.autoClicker += Math.ceil(1.2 * this.countDonutMultiplier);
         }
     }
 
