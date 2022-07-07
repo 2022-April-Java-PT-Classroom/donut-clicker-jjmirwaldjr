@@ -50,17 +50,18 @@ function donutMaker(){
           gameLoop.addToCounter();
           displayDonutCounter(counterInfo,gameLoop);
         });
-
         autoClickerBtn.addEventListener('click', () =>{
           gameLoop.addAutoClicker();
           displayDonutCounter(counterInfo,gameLoop);
         });
-
         multiplierBtn.addEventListener('click', () => {
           gameLoop.costOfMultiplier();
           displayDonutCounter(counterInfo,gameLoop);
         });
 
+        //Timer for the auto bakers
+        if (gameLoop.countAutoClicker <= 1){
+          setInterval(gameLoop.addToCounter(), 1000);
+        }
     });
-
 }
