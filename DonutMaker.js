@@ -6,7 +6,7 @@ class DonutMaker{
         this.donutMulti = donutMulti
         this.increment = 10;
         this.autoClickerCost = 100;
-        this.multiplierCost = 10;
+        this.multiplierCost = 50;
     }
     //Displays the Counter
     get donuts() {
@@ -36,7 +36,7 @@ class DonutMaker{
         }
     }
 
-    //This can add the multiplier and subract from the count
+    //This was part of testing, not used in core loop
     addDonutMultiplier(){
         if (this.donuts >= 50){
             this.donutCounter -= this.multiplierCost;
@@ -48,7 +48,7 @@ class DonutMaker{
     costOfMultiplier(){
         let currentmultiplierCost = (this.multiplierCost * (this.countDonutMultiplier+1));
         if (this.donuts >= currentmultiplierCost){
-            this.donutCounter += currentmultiplierCost
+            this.donutCounter -= currentmultiplierCost
             this.donutMulti++;
         }
     }
