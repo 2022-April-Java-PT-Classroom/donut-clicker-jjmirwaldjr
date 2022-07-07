@@ -18,18 +18,39 @@ function donutMaker(){
     const createBtn = document.querySelector('#button');
     
     createBtn.addEventListener('click', ()=>{
-        const donutCounters = new DonutMaker( 0 , 0 , 0)
+        const gameLoop = new DonutMaker( 0 , 0 , 0)
         const donutCounter = document.querySelector('#donutCounter');
         const counterInfo = document.createElement('p');
         const conuterInfoSection = document.createElement('section');
         
         //Counters for the donuts
-        displayDonutCounter(counterInfo, donutCounters);
+        displayDonutCounter(counterInfo, gameLoop);
         conuterInfoSection.appendChild(counterInfo);
 
         //display
         donutCounter.appendChild(counterInfo);
+
+        //butons for the game loop
+        const bakeBtn = document.createElement('button');
+        const autoClickerBtn = document.createElement('button');
+        const multiplierBtn = document.createElement('button');
+
+        bakeBtn.innerText = 'Bake!';
+        autoClickerBtn.innerText = 'Hire a Helper!';
+        multiplierBtn.innerText = 'More Ovens!';
+        conuterInfoSection.appendChild(bakeBtn);
+        conuterInfoSection.appendChild(autoClickerBtn);
+        conuterInfoSection.appendChild(multiplierBtn);
         
+        //final display
+        donutCounter.appendChild(conuterInfoSection);
+
+        //Game loop buttons
+        bakeBtn.addEventListener('click', () => {
+          gameLoop.addToCounter();
+          displayDonutCounter(counterInfo,gameLoop);
+        });
+
     });
 
 }
