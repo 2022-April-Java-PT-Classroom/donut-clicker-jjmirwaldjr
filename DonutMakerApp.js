@@ -45,6 +45,10 @@ function donutMaker(){
         //Game loop buttons
         bakeBtn.addEventListener('click', () => {
           gameLoop.addToCounter();
+            if (gameLoop.countDonutMultiplier > 0){
+                gameLoop.donutCounter += 
+                Math.ceil(1.2 * gameLoop.countDonutMultiplier);}
+      
           displayDonutCounter(counterInfo,gameLoop);
         });
         autoClickerBtn.addEventListener('click', () =>{
@@ -57,8 +61,8 @@ function donutMaker(){
         });
 
         //Timer for the auto bakers
-        if (gameLoop.countAutoClicker <= 1){
-          setInterval(gameLoop.addToCounter(), 1000);
-        }
+        // if (gameLoop.countAutoClicker <= 1){
+        //   setInterval(gameLoop.addToCounter(), 1000);
+        // }
     });
 }
