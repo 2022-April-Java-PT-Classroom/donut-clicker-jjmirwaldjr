@@ -2,17 +2,14 @@ import DonutMaker from './DonutMaker.js'
 import {displayDonutCounter} from './utility/util'
 
 
-const container = (document.querySelector('.container').innerText =
-  'mmmmmmmmm doughnuts.... ahhhhhhh!');
+// const container = (document.querySelector('.container').innerText =
+//   'mmmmmmmmm doughnuts.... ahhhhhhh!');
 
 renderPage();
 
 function renderPage(){
   donutMaker();
 }
-
-// const container = (document.querySelector('.container').innerText =
-//   'mmmmmmmmm doughnuts.... ahhhhhhh!');
 
 function donutMaker(){
     const createBtn = document.querySelector('#button');
