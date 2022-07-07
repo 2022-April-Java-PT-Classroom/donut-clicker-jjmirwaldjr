@@ -62,7 +62,7 @@ function donutMaker(){
 
         //Timer for the auto bakers
         // if (gameLoop.countAutoClicker <= 1){
-        //   setInterval(gameLoop.addToCounter(), 1000);
+        //   setInterval(gameLoop.addToCounter(), 5000);
         // }
     });
 }
