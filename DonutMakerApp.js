@@ -51,6 +51,16 @@ function donutMaker(){
           displayDonutCounter(counterInfo,gameLoop);
         });
 
+        autoClickerBtn.addEventListener('click', () =>{
+          gameLoop.addAutoClicker();
+          displayDonutCounter(counterInfo,gameLoop);
+        });
+
+        multiplierBtn.addEventListener('click', () => {
+          gameLoop.costOfMultiplier();
+          displayDonutCounter(counterInfo,gameLoop);
+        });
+
     });
 
 }
