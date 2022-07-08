@@ -15,7 +15,7 @@ function donutMaker(){
     const createBtn = document.querySelector('#button');
     
     createBtn.addEventListener('click', ()=>{
-        const gameLoop = new DonutMaker( 0 , 0 , 0)
+        const gameLoop = new DonutMaker( 0 , 0 , 0, false)
         const donutCounter = document.querySelector('#donutCounter');
         const counterInfo = document.createElement('p');
         const conuterInfoSection = document.createElement('section');
@@ -53,6 +53,9 @@ function donutMaker(){
         });
         autoClickerBtn.addEventListener('click', () =>{
           gameLoop.addAutoClicker();
+          if (gameLoop.autoClicker > 0){
+            gameLoop.activateAutoClicker();
+          }          
           displayDonutCounter(counterInfo,gameLoop);
         });
         multiplierBtn.addEventListener('click', () => {
@@ -61,8 +64,12 @@ function donutMaker(){
         });
 
         //Timer for the auto bakers
-        // if (gameLoop.countAutoClicker <= 1){
-        //   setInterval(gameLoop.addToCounter(), 5000);
-        // }
+        setInterval(() =>{
+          if (gameLoop.isAutoClickerActivated == true){
+            // console.log('Firing')
+            gameLoop.addToCounter()
+            displayDonutCounter(counterInfo,gameLoop)
+          }
+        }, 1000);
     });
 }
