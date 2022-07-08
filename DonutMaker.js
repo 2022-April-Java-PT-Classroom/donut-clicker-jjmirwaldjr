@@ -1,9 +1,10 @@
 class DonutMaker{
     
-    constructor (donutCounter, autoClicker, donutMulti){
+    constructor (donutCounter, autoClicker, donutMulti, isAutoClickerActivated){
         this.donutCounter = donutCounter;
         this.autoClicker = autoClicker;
-        this.donutMulti = donutMulti
+        this.donutMulti = donutMulti;
+        this.isAutoClickerActivated = isAutoClickerActivated;
         this.increment = 10;
         this.autoClickerCost = 100;
         this.multiplierCost = 50;
@@ -34,6 +35,10 @@ class DonutMaker{
             this.donutCounter -= currentClickerCost
             this.autoClicker++;
         }
+    }
+
+    activateAutoClicker(){
+        this.isAutoClickerActivated = true;
     }
 
     //This was part of testing, not used in core loop
