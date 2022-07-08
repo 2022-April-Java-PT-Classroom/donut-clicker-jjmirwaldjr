@@ -47,7 +47,7 @@ function donutMaker(){
           gameLoop.addToCounter();
             if (gameLoop.countDonutMultiplier > 0){
                 gameLoop.donutCounter += 
-                Math.ceil(1.2 * gameLoop.countDonutMultiplier);}
+                Math.round(1.2 * gameLoop.countDonutMultiplier);}
       
           displayDonutCounter(counterInfo,gameLoop);
         });
@@ -55,7 +55,7 @@ function donutMaker(){
           gameLoop.addAutoClicker();
           if (gameLoop.autoClicker > 0){
             gameLoop.activateAutoClicker();
-          }          
+          }
           displayDonutCounter(counterInfo,gameLoop);
         });
         multiplierBtn.addEventListener('click', () => {
