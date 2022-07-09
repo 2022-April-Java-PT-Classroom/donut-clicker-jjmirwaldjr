@@ -47,7 +47,7 @@ function donutMaker(){
           gameLoop.addToCounter();
             if (gameLoop.countDonutMultiplier > 0){
                 gameLoop.donutCounter += 
-                Math.round(1.2 * gameLoop.countDonutMultiplier);}
+                Math.round(1.2 ** gameLoop.countDonutMultiplier);}
       
           displayDonutCounter(counterInfo,gameLoop);
         });
